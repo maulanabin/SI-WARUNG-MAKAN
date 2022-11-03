@@ -10,7 +10,7 @@
               <div class="card-body">
                 <div class="row align-items-center justify-content-center">
                   <div class="col-lg-6 text-center pb-3 p-lg-0">
-                    <img src="{{ asset($menus->img) }}" alt="{{ $menus->menu }}" class="img-fluid shadow rounded" width="300">
+                    <img src="{{ asset('image/'.$menus->img) }}" alt="{{ $menus->menu }}" class="img-fluid shadow rounded" width="300">
                   </div>
                   <div class="col-lg-6">
                     <h1 class="h3 font-weight-bold">{{ $menus->menu }}</h1>

@@ -113,7 +113,7 @@ class BackendController extends Controller
         $users->nama = $request->nama;
         $users->level = $request->level;
         $users->save();
-        
+
         Session::flash('message', 'Berhasil menambahkan data');
         Session::flash('message-class', 'success');
         return redirect()->route('backend.superadmin.user');
@@ -153,7 +153,7 @@ class BackendController extends Controller
             $users->password = bcrypt($request->password);
         }
         $users->save();
-        
+
         Session::flash('message', 'Berhasil meng-update data');
         Session::flash('message-class', 'warning');
         return redirect()->route('backend.superadmin.user');
@@ -161,7 +161,7 @@ class BackendController extends Controller
 
     public function userDeleteDo($id){
         User::destroy($id);
-        
+
         Session::flash('message', 'Berhasil menghapus data');
         Session::flash('message-class', 'danger');
         return redirect()->route('backend.superadmin.user');
@@ -196,12 +196,14 @@ class BackendController extends Controller
         $menus->harga = $request->harga;
         $menus->id_kategori = $request->kategori;
         $menus->status = $request->status;
+        // $imgPath = $request->img->store('/images/frontend/menu', 'local');
+        // $imgPath = $request->img->store('storage/images/frontend/foods', 'public');
+        $imgPath = $request->img->store('imagess', 'public');
 
-        $imgPath = $request->img->store('/images/frontend/menu', 'local');
         $menus->img = $imgPath;
 
         $menus->save();
-        
+
         Session::flash('message', 'Berhasil menambahkan data');
         Session::flash('message-class', 'success');
         return redirect()->route('backend.superadmin.menu');
@@ -244,11 +246,14 @@ class BackendController extends Controller
         $menus->status = $request->status;
         if ($request->img){
             Storage::delete($menus->img);
-            $imgPath = $request->img->store('/images/frontend/menu', 'local');
+            // $imgPath = $request->img->store('/images/frontend/menu', 'local');
+            // $imgPath = $request->img->store('storage/images/frontend/foods', 'public');
+            $imgPath = $request->img->store('imagess', 'public');
+
             $menus->img = $imgPath;
         }
         $menus->save();
-        
+
         Session::flash('message', 'Berhasil meng-update data');
         Session::flash('message-class', 'warning');
         return redirect()->route('backend.superadmin.menu');
@@ -259,7 +264,7 @@ class BackendController extends Controller
         Storage::delete($menus->img);
 
         Menu_list::destroy($id);
-        
+
         Session::flash('message', 'Berhasil menghapus data');
         Session::flash('message-class', 'danger');
         return redirect()->route('backend.superadmin.menu');
@@ -285,7 +290,7 @@ class BackendController extends Controller
 
         $kategoris->kategori = $request->kategori;
         $kategoris->save();
-        
+
         Session::flash('message', 'Berhasil menambahkan data');
         Session::flash('message-class', 'success');
         return redirect()->route('backend.superadmin.kategori');
@@ -313,7 +318,7 @@ class BackendController extends Controller
 
         $kategoris->kategori = $request->kategori;
         $kategoris->save();
-        
+
         Session::flash('message', 'Berhasil meng-update data');
         Session::flash('message-class', 'warning');
         return redirect()->route('backend.superadmin.kategori');
@@ -321,7 +326,7 @@ class BackendController extends Controller
 
     public function kategoriDeleteDo($id){
         Kategori_menu::destroy($id);
-        
+
         Session::flash('message', 'Berhasil menghapus data');
         Session::flash('message-class', 'danger');
         return redirect()->route('backend.superadmin.kategori');
@@ -360,7 +365,7 @@ class BackendController extends Controller
         $pelanggans->nama = $request->nama;
         $pelanggans->email = $request->email;
         $pelanggans->save();
-        
+
         Session::flash('message', 'Berhasil menambahkan data');
         Session::flash('message-class', 'success');
         return redirect()->route('backend.superadmin.pelanggan');
@@ -390,7 +395,7 @@ class BackendController extends Controller
         $pelanggans->nama = $request->nama;
         $pelanggans->email = $request->email;
         $pelanggans->save();
-        
+
         Session::flash('message', 'Berhasil meng-update data');
         Session::flash('message-class', 'warning');
         return redirect()->route('backend.superadmin.pelanggan');
@@ -398,7 +403,7 @@ class BackendController extends Controller
 
     public function pelangganDeleteDo($id){
         Pelanggan::destroy($id);
-        
+
         Session::flash('message', 'Berhasil menghapus data');
         Session::flash('message-class', 'danger');
         return redirect()->route('backend.superadmin.pelanggan');
@@ -426,7 +431,7 @@ class BackendController extends Controller
         $statuses->id_status = $request->id_status;
         $statuses->status = $request->status;
         $statuses->save();
-        
+
         Session::flash('message', 'Berhasil menambahkan data');
         Session::flash('message-class', 'success');
         return redirect()->route('backend.superadmin.status');
@@ -456,7 +461,7 @@ class BackendController extends Controller
         $statuses->id_status = $request->id_status;
         $statuses->status = $request->status;
         $statuses->save();
-        
+
         Session::flash('message', 'Berhasil meng-update data');
         Session::flash('message-class', 'warning');
         return redirect()->route('backend.superadmin.status');
@@ -464,7 +469,7 @@ class BackendController extends Controller
 
     public function statusDeleteDo($id){
         Status_list::destroy($id);
-        
+
         Session::flash('message', 'Berhasil menghapus data');
         Session::flash('message-class', 'danger');
         return redirect()->route('backend.superadmin.status');
@@ -498,7 +503,7 @@ class BackendController extends Controller
         $pemesanans->tgl_pemesanan = $request->tgl_pemesanan;
         $pemesanans->id_status = $request->id_status;
         $pemesanans->save();
-        
+
         Session::flash('message', 'Berhasil menambahkan data');
         Session::flash('message-class', 'success');
         return redirect()->route('backend.superadmin.pemesanan');
@@ -532,7 +537,7 @@ class BackendController extends Controller
         $pemesanans->tgl_pemesanan = $request->tgl_pemesanan;
         $pemesanans->id_status = $request->id_status;
         $pemesanans->save();
-        
+
         Session::flash('message', 'Berhasil meng-update data');
         Session::flash('message-class', 'warning');
         return redirect()->route('backend.superadmin.pemesanan');
@@ -540,7 +545,7 @@ class BackendController extends Controller
 
     public function pemesananDeleteDo($id){
         Pemesanan::destroy($id);
-        
+
         Session::flash('message', 'Berhasil menghapus data');
         Session::flash('message-class', 'danger');
         return redirect()->route('backend.superadmin.pemesanan');
@@ -572,7 +577,7 @@ class BackendController extends Controller
         $details->id_menu = $request->id_menu;
         $details->kuantitas = $request->kuantitas;
         $details->save();
-        
+
         Session::flash('message', 'Berhasil menambahkan data');
         Session::flash('message-class', 'success');
         return redirect()->route('backend.superadmin.detail');
@@ -606,7 +611,7 @@ class BackendController extends Controller
         $details->id_menu = $request->id_menu;
         $details->kuantitas = $request->kuantitas;
         $details->save();
-        
+
         Session::flash('message', 'Berhasil meng-update data');
         Session::flash('message-class', 'warning');
         return redirect()->route('backend.superadmin.detail');
@@ -614,7 +619,7 @@ class BackendController extends Controller
 
     public function detailDeleteDo($id){
         Detail_pemesanan::destroy($id);
-        
+
         Session::flash('message', 'Berhasil menghapus data');
         Session::flash('message-class', 'danger');
         return redirect()->route('backend.superadmin.detail');
@@ -645,7 +650,7 @@ class BackendController extends Controller
         $pembayarans->total_bayar = $request->total_bayar;
         $pembayarans->tgl_pembayaran = $request->tgl_pembayaran;
         $pembayarans->save();
-        
+
         Session::flash('message', 'Berhasil menambahkan data');
         Session::flash('message-class', 'success');
         return redirect()->route('backend.superadmin.pembayaran');
@@ -678,7 +683,7 @@ class BackendController extends Controller
         $pembayarans->total_bayar = $request->total_bayar;
         $pembayarans->tgl_pembayaran = $request->tgl_pembayaran;
         $pembayarans->save();
-        
+
         Session::flash('message', 'Berhasil meng-update data');
         Session::flash('message-class', 'warning');
         return redirect()->route('backend.superadmin.pembayaran');
@@ -686,7 +691,7 @@ class BackendController extends Controller
 
     public function pembayaranDeleteDo($id){
         Pembayaran::destroy($id);
-        
+
         Session::flash('message', 'Berhasil menghapus data');
         Session::flash('message-class', 'danger');
         return redirect()->route('backend.superadmin.pembayaran');
@@ -740,7 +745,7 @@ class BackendController extends Controller
         $pembayaran = Pembayaran::find($pembayarans->id_pembayaran);
         $pembayaran->tgl_pembayaran = now();
         $pembayaran->save();
-        
+
         Session::flash('message', 'Berhasil menerima pembayaran dengan id pesanan '.$pemesanans->id_pemesanan);
         Session::flash('message-class', 'success');
         return redirect()->route('backend.admin.bayar');
@@ -763,7 +768,7 @@ class BackendController extends Controller
 
         $pemesanans->id_status = 5;
         $pemesanans->save();
-        
+
         Session::flash('message', 'Berhasil memproses pesanan dengan id pesanan '.$pemesanans->id_pemesanan);
         Session::flash('message-class', 'success');
         return redirect()->route('backend.admin.proses');
@@ -786,7 +791,7 @@ class BackendController extends Controller
 
         $pemesanans->id_status = 6;
         $pemesanans->save();
-        
+
         Session::flash('message', 'Berhasil menyelesaikan pesanan dengan id pesanan '.$pemesanans->id_pemesanan);
         Session::flash('message-class', 'success');
         return redirect()->route('backend.admin.selesai');

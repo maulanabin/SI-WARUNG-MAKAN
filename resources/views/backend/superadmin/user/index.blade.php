@@ -58,7 +58,21 @@
                           <td>{{ $u->username }}</td>
                           <td><span class="text-info font-italic">Encrypted</span></td>
                           <td>{{ $u->nama }}</td>
-                          <td>{{ ($u->level == 0) ? 'Owner' : 'Staff' }}</td>
+                          {{-- <td>{{ ($u->level == 0) ? 'Owner' : 'Staff' }}</td> --}}
+                          <td>
+                            {{ @if($u->level == 0)'Owner'
+                            @elseif ($u->level == 1)'Staff (Kasir)'
+                            @elseif ($u->level == 2)'Juru Masak (Koki)'
+                            @else'Pelayan'
+                          @endif }}</td>
+    {{-- @if($user->level === 1)
+        //do something
+    @elseif($user->level === 2)
+        //do something else
+    @else
+        //user does not have level
+    @endif
+@endforeach --}}
                           <td>
                             <a href="{{ route('backend.superadmin.user.edit', ['id' => $u->id_user]) }}" class="btn btn-info btn-sm"><i class="far fa-edit"></i></a>
                             <a href="{{ route('backend.superadmin.user.delete', ['id' => $u->id_user]) }}" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></a>

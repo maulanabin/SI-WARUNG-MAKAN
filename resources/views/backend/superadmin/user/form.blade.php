@@ -98,10 +98,18 @@
                     </div>
                     <div class="form-check form-check-inline">
                       <input class="form-check-input @error('level') is-invalid @enderror" type="radio" name="level" id="level-admin" value="1" {{ (isset($users) && $users->level == 1) ? 'checked' : (old('level') == '1' ? 'checked' : '') }}>
-                      <label class="form-check-label" for="level-admin">Staff</label>
+                      <label class="form-check-label" for="level-admin">Kasir</label>
                     </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input @error('level') is-invalid @enderror" type="radio" name="level" id="level-koki" value="2" {{ (isset($users) && $users->level == 2) ? 'checked' : (old('level') == '2' ? 'checked' : '') }}>
+                        <label class="form-check-label" for="level-koki">Juru Masak</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input @error('level') is-invalid @enderror" type="radio" name="level" id="level-pelayan" value="3" {{ (isset($users) && $users->level == 3) ? 'checked' : (old('level') == '3' ? 'checked' : '') }}>
+                        <label class="form-check-label" for="level-pelayan">Pelayan</label>
+                      </div>
                   </div>
-                  <small><span class="text-danger">*</span>) Diperlukan</small>
+                  <small><span class="text-danger">*</span>Diperlukan</small>
                   <hr>
                   <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
                 </form>

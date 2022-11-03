@@ -101,13 +101,13 @@
                 </div>
               </div>
               <div class="col-12 col-lg-6 col-xl-4 my-2">
-                <div class="card shadow-sm h-100">
-                  <div class="card-body">
-                    <div class="row align-items-center">
-                      <div class="col">
+                {{-- <div class="card shadow-sm h-100"> --}}
+                  {{-- <div class="card-body">
+                    <div class="row align-items-center"> --}}
+                      {{-- <div class="col">
                         <i class="fas fa-user fa-4x"></i>
-                      </div>
-                      <div class="col">
+                      </div> --}}
+                      {{-- <div class="col">
                         <h3 class="h3">
                           Data Pelanggan
                         </h3>
@@ -129,8 +129,8 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-12 col-lg-6 col-xl-4 my-2">
+              </div> --}}
+              {{-- <div class="col-12 col-lg-6 col-xl-4 my-2">
                 <div class="card shadow-sm h-100">
                   <div class="card-body">
                     <div class="row align-items-center">
@@ -276,9 +276,9 @@
                           </a>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
+                    </div> --}}
+                  {{-- </div>
+                </div> --}}
               </div>
             </div>
           </div>

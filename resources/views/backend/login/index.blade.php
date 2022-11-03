@@ -10,12 +10,12 @@
                   <!-- Nested Row within Card Body -->
                   <div class="row">
                       <div class="col-lg-6 d-none d-lg-block">
-                        <img src="https://source.unsplash.com/fJXv46LT7Xk/600x500/" class="h-100 w-100" alt="Responsive image">
+                        <img src="https://i.postimg.cc/g2SDC90J/afdgsd.jpg" class="h-100 w-100" alt="Responsive image">
                       </div>
                       <div class="col-lg-6">
                           <div class="p-5">
                               <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Login Admin</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Login Alinea Cafe</h1>
                               </div>
                               @if (session('error'))
                                 <div class="alert alert-warning" role="alert">
@@ -52,9 +52,9 @@
                                 </button>
                               </form>
                               <hr>
-                              <div class="text-center">
+                              {{-- <div class="text-center">
                                 <a class="small" href="pelanggan_daftar.html">Daftar Untuk Pelanggan</a>
-                              </div>
+                              </div> --}}
                               <div class="text-center">
                                 <a class="small" href="{{ route('home') }}">Kembali ke Halaman Menu Utama</a>
                               </div>

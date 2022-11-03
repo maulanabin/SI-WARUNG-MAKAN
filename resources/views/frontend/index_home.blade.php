@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Si Warung Makan | RPL - B03">
+  <meta name="description" content="Si Alinea Cafe | Kelompok 4">
   <meta name="author" content="">
 
   <title>
-    SI Warung Makan
+    SI Alinea Cafe
   </title>
 
   <link rel="icon" href="{{ asset('assets/frontend/img/favicon/favicon.png') }}">

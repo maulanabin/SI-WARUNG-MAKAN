@@ -79,7 +79,7 @@ class HomeController extends Controller
         $pelanggans->nama = $request->nama;
         $pelanggans->email = $request->email;
         $pelanggans->save();
-        
+
         return view('frontend.register.success', ['id_pelanggan' => $id_pelanggan]);
     }
 
@@ -87,7 +87,7 @@ class HomeController extends Controller
         if (Session::get('pelanggans')){
             return redirect()->route('home.pelanggan');
         }
-        
+
         return view('frontend.login.index');
     }
 
@@ -102,7 +102,7 @@ class HomeController extends Controller
             Session::flash('message-class', 'warning');
             return redirect()->route('home.login');
         }
-        
+
         $request->session()->put('pelanggans', $pelanggans);
         return redirect()->route('home.pelanggan');
     }
@@ -166,7 +166,7 @@ class HomeController extends Controller
             'pesanan' => $pesanan,
             'harga' => $harga,
         ]);
-        
+
         return view('frontend.pelanggan.pesan', ['pelanggans' => $pelanggans, 'menus' => $menus, 'kategoris' => $kategoris, 'kategori_name' => $kategori_name, 'count' => $count, 'details' => $details]);
     }
 

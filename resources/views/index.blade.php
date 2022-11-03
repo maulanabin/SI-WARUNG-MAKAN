@@ -23,7 +23,7 @@
       <footer class="sticky-footer bg-white shadow-lg py-3">
         <div class="container my-auto">
           <div class="text-center my-auto">
-            <small>&copy; B03 SI Warung Makan 2021
+            <small>&copy; Kelompok 4 - SI Alinea Cafe 2022
             </small>
           </div>
         </div>

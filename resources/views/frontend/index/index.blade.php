@@ -13,18 +13,18 @@
                   <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="btnKategori" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{ $kategori_name ?? 'Kategori' }}
                   </button>
-                  <div class="dropdown-menu" aria-labelledby="btnKategori">
-                    <a class="dropdown-item" href="{{ route('home') }}">Tampilkan Semua</a>
+                  {{-- <div class="dropdown-menu" aria-labelledby="btnKategori">
+                    <a class="dropdown-item" href="{{ route('home') }}" di>Tampilkan Semua</a>
                     @foreach ($kategoris as $kategori)
                       <a class="dropdown-item" href="{{ route('home.kategori', ['id' => $kategori->id_kategori]) }}">{{ $kategori->kategori }}</a>
                     @endforeach
-                  </div>
+                  </div> --}}
                 </div>
               </div>
-              @forelse ($menus as $menu)
+              {{-- @forelse ($menus as $menu)
                 <div class="col-10 col-sm-6 col-md-4 col-lg-3 my-2">
                   <div class="card h-100 shadow-sm">
-                    <img class="card-img-top" src="{{ asset($menu->img) }}" alt="{{ $menu->menu }}">
+                    <img class="card-img-top" src="{{ asset('imagess/'.$menu->img) }}" alt="{{ $menu->menu }}">
                     <div class="card-body text-center">
                       <h5 class="card-title">{{ $menu->menu }}</h5>
                       <hr>
@@ -54,7 +54,7 @@
                 <div class="text-center">
                   Tidak ada menu yang tersedia
                 </div>
-              @endforelse
+              @endforelse --}}
             </div>
           </div>
         </div>

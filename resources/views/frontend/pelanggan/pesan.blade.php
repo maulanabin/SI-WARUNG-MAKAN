@@ -32,7 +32,7 @@
               @forelse ($menus as $menu)
                 <div class="col-10 col-sm-6 col-md-4 col-lg-3 my-2">
                   <div class="card h-100 shadow-sm">
-                    <img class="card-img-top" src="{{ asset($menu->img) }}" alt="{{ $menu->menu }}">
+                    <img class="card-img-top" src="{{ asset('image/'.$menu->img) }}" alt="{{ $menu->menu }}">
                     <div class="card-body text-center">
                       <h5 class="card-title">{{ $menu->menu }}</h5>
                       <hr>

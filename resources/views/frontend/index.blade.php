@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Si Warung Makan | RPL - B03">
+  <meta name="description" content="Si Alinea Cafe | Kelompok 4">
   <meta name="author" content="">
 
   <title>
-    SI Warung Makan
+    SI Alinea Cafe
   </title>
 
   <link rel="icon" href="{{ asset('assets/frontend/img/favicon/favicon.png') }}">
@@ -51,14 +51,14 @@
 		  <div class="">
 		    <a class="navbar-brand d-flex mr-auto text-primary" href="{{ route('home') }}">
 		      <span class="font-weight-bold mx-1">
-		        <i class="fas fa-utensils"></i> SI Warung Makan
+		        <i class="fas fa-utensils"></i> SI Alinea Cafe
 		      </span>
 		    </a>
 		  </div>
 
 		  <div class="topbar-divider d-none d-lg-block"></div>
 
-		  <div class="navbar-text">
+		  {{-- <div class="navbar-text">
         @if (Session::get('pelanggans'))
           <a href="{{ route('home.pelanggan') }}" class="btn btn-primary btn-sm text-white">
             <i class="fas fa-home"></i>
@@ -74,29 +74,29 @@
 		    <button class="btn btn-link btn-sm d-lg-none rounded-circle" type="button" data-toggle="collapse" data-target="#navToggler1" aria-controls="navToggler1" aria-expanded="false" aria-label="Toggle navigation">
 		      <i class="fa fa-bars"></i>
 		    </button>
-      </div>
+      </div> --}}
 
 		  <div class="collapse navbar-collapse" id="navToggler1">
 		    <hr class="d-lg-none m-0">
 		    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-          <li class="nav-item p-1 p-lg-0">
+          {{-- <li class="nav-item p-1 p-lg-0">
 		        <a href="{{ route('home.status') }}" class="">
 		          <button class="btn btn-link text-decoration-none mr-1 btn-sm" type="button">
 		            <i class="fas fa-info-circle"></i> Status Pesanan
 		          </button>
 		        </a>
-		      </li>
-          <li class="nav-item p-1 p-lg-0">
+		      </li> --}}
+          {{-- <li class="nav-item p-1 p-lg-0">
 		        <a href="{{ route('home.register') }}" class="">
 		          <button class="btn btn-link text-decoration-none mr-1 btn-sm" type="button">
 		            <i class="fas fa-address-book"></i> Daftar Pelanggan
 		          </button>
 		        </a>
-		      </li>
+		      </li> --}}
 		      <li class="nav-item p-1 p-lg-0">
 		        <a href="{{ route('backend.login') }}" class="">
 		          <button class="btn btn-link text-decoration-none mr-1 btn-sm" type="button">
-		            <i class="fas fa-sign-in-alt"></i> Login Admin
+		            <i class="fas fa-sign-in-alt"></i> Login
 		          </button>
 		        </a>
 		      </li>
